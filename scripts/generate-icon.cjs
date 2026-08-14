@@ -43,19 +43,13 @@ function fillRect(left, top, right, bottom, color) {
 }
 
 const px = (value) => Math.round(value * scale)
-fillRoundedRect(0, 0, high, high, px(20), [32, 38, 36, 255])
-
-const white = [244, 247, 245, 255]
-fillRect(px(33), px(31), px(95), px(39), white)
-fillRect(px(33), px(89), px(95), px(97), white)
-fillRect(px(33), px(39), px(41), px(89), white)
-fillRect(px(87), px(39), px(95), px(89), white)
-
-const green = [67, 181, 129, 255]
-fillRect(px(47), px(62), px(55), px(79), green)
-fillRect(px(60), px(48), px(68), px(79), green)
-fillRect(px(73), px(57), px(81), px(79), green)
-fillRect(px(43), px(88), px(85), px(94), [84, 183, 198, 255])
+// Match the OpenCode mark in media/opencode-icon.svg, with a high-contrast
+// black-and-white treatment that remains legible at Marketplace icon size.
+const black = [17, 17, 17, 255]
+const white = [255, 255, 255, 255]
+fillRoundedRect(0, 0, high, high, px(20), black)
+fillRect(px(32), px(24), px(96), px(104), white)
+fillRect(px(48), px(40), px(80), px(88), black)
 
 const downsampled = Buffer.alloc(size * size * 4)
 for (let y = 0; y < size; y += 1) {

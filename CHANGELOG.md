@@ -11,4 +11,5 @@ All notable changes to this extension are documented here.
 - Restrict API-key requests to the official OpenCode endpoint.
 - Protect `opencode.json` with validation, backup, and atomic replacement.
 - Restrict optional gateway integration to loopback origins.
+- Replace the Marketplace icon with a high-contrast black-and-white OpenCode mark.
 - Add reproducible build, security tests, VSIX packaging checks, and release automation.
