@@ -1,0 +1,160 @@
+{
+	"name": "opencode-go-subscription",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "0.4.0",
+	"publisher": "zcode-local",
+	"author": "OpenCode Go Subscription Manager contributors",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Nikolu716/OpenCode_vscodeplugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Nikolu716/OpenCode_vscodeplugin/issues"
+	},
+	"homepage": "https://github.com/Nikolu716/OpenCode_vscodeplugin#readme",
+	"icon": "media/icon.png",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"opencode",
+		"opencode-go",
+		"subscription",
+		"usage",
+		"zen"
+	],
+	"main": "./dist/extension.js",
+	"extensionKind": [
+		"workspace"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": false,
+			"description": "This extension stores API keys, queries account usage, and can update the user's OpenCode configuration."
+		}
+	},
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "opencodeGo",
+					"title": "%views.openCodeGo.title%",
+					"icon": "media/opencode-icon.svg"
+				}
+			]
+		},
+		"views": {
+			"opencodeGo": [
+				{
+					"type": "webview",
+					"id": "opencodeGo.dashboard",
+					"name": "%views.dashboard.name%"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "opencodeGo.showDashboard",
+				"title": "%cmd.showDashboard%",
+				"icon": "$(rocket)"
+			},
+			{
+				"command": "opencodeGo.refresh",
+				"title": "%cmd.refresh%",
+				"icon": "$(refresh)",
+				"when": "view == opencodeGo.dashboard"
+			},
+			{
+				"command": "opencodeGo.openConsole",
+				"title": "%cmd.openConsole%",
+				"icon": "$(globe)"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "opencodeGo.refresh",
+					"when": "view == opencodeGo.dashboard",
+					"group": "navigation@1"
+				},
+				{
+					"command": "opencodeGo.openConsole",
+					"when": "view == opencodeGo.dashboard",
+					"group": "navigation@2"
+				}
+			]
+		},
+		"configuration": {
+			"title": "%config.title%",
+			"properties": {
+				"opencodeGo.autoRefreshInterval": {
+					"type": "number",
+					"default": 60,
+					"minimum": 0,
+					"scope": "application",
+					"description": "%config.autoRefreshInterval%"
+				},
+				"opencodeGo.gatewayUrl": {
+					"type": "string",
+					"default": "",
+					"scope": "machine",
+					"description": "%config.gatewayUrl%"
+				},
+				"opencodeGo.notifyThresholds": {
+					"type": "object",
+					"scope": "application",
+					"default": {
+						"enabled": true,
+						"warn": 80,
+						"crit": 100
+					},
+					"properties": {
+						"enabled": {
+							"type": "boolean",
+							"description": "%config.notifyEnabled%"
+						},
+						"warn": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 100,
+							"description": "%config.notifyWarn%"
+						},
+						"crit": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 100,
+							"description": "%config.notifyCrit%"
+						}
+					},
+					"description": "%config.notifyThresholds%"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build": "node scripts/generate-icon.cjs && node scripts/build.mjs",
+		"check": "node scripts/check.cjs",
+		"test:unit": "node test/ui-static.test.cjs && node --test test/unit/security.test.cjs test/unit/metadata.test.cjs",
+		"test:integration": "node test/run-integration.cjs",
+		"test:vsix": "node test/run-integration.cjs --vsix",
+		"verify": "npm run build && npm run check && npm run test:unit",
+		"verify:all": "npm run verify && npm run test:integration",
+		"verify:package": "npm run package && npm run test:vsix",
+		"release:check": "node scripts/validate-release.cjs",
+		"vscode:prepublish": "npm run verify && npm run release:check",
+		"package": "node scripts/package.cjs"
+	},
+	"devDependencies": {
+		"@vscode/test-electron": "3.1.0",
+		"@vscode/vsce": "3.9.2",
+		"yauzl": "3.2.0"
+	}
+}

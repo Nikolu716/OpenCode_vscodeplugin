@@ -1,0 +1,16 @@
+{
+  "displayName": "OpenCode Go サブスクリプションマネージャー",
+  "description": "VS CodeでOpenCode Goのサブスクリプションを確認・管理: 5時間/週/月の利用量、契約状態、利用可能なモデル、マルチアカウント対応、コンソールをワンクリックで開く。",
+  "views.openCodeGo.title": "OpenCode Go",
+  "views.dashboard.name": "サブスクリプションダッシュボード",
+  "cmd.showDashboard": "OpenCode Go: サブスクリプションダッシュボードを開く",
+  "cmd.refresh": "OpenCode Go: 利用量を更新",
+  "cmd.openConsole": "OpenCode Go: コンソールを開く",
+  "config.title": "OpenCode Go",
+  "config.autoRefreshInterval": "自動更新間隔（秒）。0に設定すると無効になります。",
+  "config.gatewayUrl": "ローカル中継ゲートウェイのURL（例: http://127.0.0.1:8000）。空にするとゲートウェイ連携は無効になります。",
+  "config.notifyThresholds": "利用量アラートのしきい値: warn/crit のパーセンテージと通知の有効/無効。",
+  "config.notifyEnabled": "利用量がしきい値を超えた場合やキーが無効になった場合にVS Code通知を表示します。",
+  "config.notifyWarn": "警告しきい値（パーセント）",
+  "config.notifyCrit": "重大しきい値（パーセント、通常は上限到達ライン）"
+}

@@ -1,0 +1,16 @@
+{
+  "displayName": "OpenCode Go 구독 매니저",
+  "description": "VS Code에서 OpenCode Go 구독을 바로 확인하고 관리하세요: 5시간/주간/월간 사용량, 구독 상태, 사용 가능한 모델, 다중 계정 지원, 콘솔 한 번에 열기.",
+  "views.openCodeGo.title": "OpenCode Go",
+  "views.dashboard.name": "구독 대시보드",
+  "cmd.showDashboard": "OpenCode Go: 구독 대시보드 열기",
+  "cmd.refresh": "OpenCode Go: 사용량 새로고침",
+  "cmd.openConsole": "OpenCode Go: 콘솔 열기",
+  "config.title": "OpenCode Go",
+  "config.autoRefreshInterval": "자동 새로고침 간격(초). 0으로 설정하면 비활성화됩니다.",
+  "config.gatewayUrl": "로컬 릴레이 게이트웨이 주소(예: http://127.0.0.1:8000). 비우면 게이트웨이 연동이 비활성화됩니다.",
+  "config.notifyThresholds": "사용량 경고 임계값: warn/crit 백분율 및 알림 활성화 여부.",
+  "config.notifyEnabled": "사용량이 임계값을 넘거나 키가 무효화되면 VS Code 알림을 표시합니다.",
+  "config.notifyWarn": "경고 임계값(백분율)",
+  "config.notifyCrit": "심각 임계값(백분율, 보통 한도 도달선)"
+}

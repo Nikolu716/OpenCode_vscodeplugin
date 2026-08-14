@@ -1,0 +1,16 @@
+.github/**
+.gitignore
+.vscodeignore
+.vscode-test/**
+.vscode-test-*/**
+.npm-cache/**
+artifacts/**
+scripts/**
+src/**
+test/**
+debug.log
+.vsixmanifest
+media/vendor/**
+media/marketplace-icon.svg
+node_modules/**
+*.vsix

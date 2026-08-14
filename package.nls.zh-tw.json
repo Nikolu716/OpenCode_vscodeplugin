@@ -1,0 +1,16 @@
+{
+  "displayName": "OpenCode Go 訂閱管家",
+  "description": "在 VS Code 中直觀查看和管理 OpenCode Go 訂閱：5 小時/每週/每月用量進度、訂閱狀態、可用模型，支援多帳戶，一鍵開啟管理主控台。",
+  "views.openCodeGo.title": "OpenCode Go",
+  "views.dashboard.name": "訂閱儀表板",
+  "cmd.showDashboard": "OpenCode Go: 開啟訂閱儀表板",
+  "cmd.refresh": "OpenCode Go: 重新整理用量",
+  "cmd.openConsole": "OpenCode Go: 開啟主控台",
+  "config.title": "OpenCode Go",
+  "config.autoRefreshInterval": "自動重新整理間隔（秒）。設為 0 關閉自動重新整理。",
+  "config.gatewayUrl": "本機中轉閘道器位址（如 http://127.0.0.1:8000），留空關閉閘道器聯動。",
+  "config.notifyThresholds": "用量預警閾值：warn/crit 百分比及是否啟用通知。",
+  "config.notifyEnabled": "用量越過閾值或金鑰失效時彈出 VS Code 通知。",
+  "config.notifyWarn": "預警閾值（百分比）",
+  "config.notifyCrit": "嚴重閾值（百分比，通常是限流線）"
+}

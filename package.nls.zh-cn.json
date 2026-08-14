@@ -1,0 +1,16 @@
+{
+  "displayName": "OpenCode Go 订阅管家",
+  "description": "在 VS Code 中直观查看和管理 OpenCode Go 订阅：5 小时/每周/每月用量进度、订阅状态、可用模型，支持多账户，一键打开管理控制台。",
+  "views.openCodeGo.title": "OpenCode Go",
+  "views.dashboard.name": "订阅仪表盘",
+  "cmd.showDashboard": "OpenCode Go: 打开订阅仪表盘",
+  "cmd.refresh": "OpenCode Go: 刷新用量",
+  "cmd.openConsole": "OpenCode Go: 打开控制台",
+  "config.title": "OpenCode Go",
+  "config.autoRefreshInterval": "自动刷新间隔（秒）。设置为 0 关闭自动刷新。",
+  "config.gatewayUrl": "本地中转网关地址（如 http://127.0.0.1:8000），留空关闭网关联动。",
+  "config.notifyThresholds": "用量预警阈值：warn/crit 百分比及是否启用通知。",
+  "config.notifyEnabled": "用量越过阈值或 key 失效时弹出 VS Code 通知。",
+  "config.notifyWarn": "预警阈值（百分比）",
+  "config.notifyCrit": "严重阈值（百分比，通常是限流线）"
+}

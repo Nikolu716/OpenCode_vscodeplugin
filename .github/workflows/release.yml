@@ -1,0 +1,60 @@
+name: Publish
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run release:check
+      - run: npm run build
+      - run: git diff --exit-code -- dist
+      - run: npm run check
+      - run: npm run test:unit
+      - run: xvfb-run -a npm run test:integration
+      - run: npm run package
+      - run: xvfb-run -a npm run test:vsix
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-vsix
+          path: artifacts/*.vsix
+          if-no-files-found: error
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    environment: marketplace
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-vsix
+          path: artifacts
+      - name: Verify publish credential
+        run: test -n "$VSCE_PAT"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - run: node node_modules/@vscode/vsce/vsce publish --packagePath "artifacts/opencode-go-subscription-${GITHUB_REF_NAME#v}.vsix" -p "$VSCE_PAT"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*.vsix
