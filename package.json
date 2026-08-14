@@ -4,7 +4,7 @@
 	"description": "%description%",
 	"version": "0.4.0",
 	"publisher": "8d6d4597-4109-6085-bf5e-07b41f4f0f38",
-	"author": "OpenCode Go Subscription Manager contributors",
+	"author": "OpenCode GO Manager contributors",
 	"license": "MIT",
 	"repository": {
 		"type": "git",

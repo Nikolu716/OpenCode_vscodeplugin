@@ -1,5 +1,5 @@
 {
-  "displayName": "OpenCode Go Subscription Manager",
+  "displayName": "OpenCode GO Manager",
   "description": "View and manage your OpenCode Go subscription right in VS Code: 5-hour/weekly/monthly usage bars, subscription status, available models, and multi-account support with one-click console access.",
   "views.openCodeGo.title": "OpenCode Go",
   "views.dashboard.name": "Subscription Dashboard",

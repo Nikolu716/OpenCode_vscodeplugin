@@ -1,5 +1,5 @@
 {
-  "displayName": "OpenCode Go 订阅管家",
+  "displayName": "OpenCode GO Manager",
   "description": "在 VS Code 中直观查看和管理 OpenCode Go 订阅：5 小时/每周/每月用量进度、订阅状态、可用模型，支持多账户，一键打开管理控制台。",
   "views.openCodeGo.title": "OpenCode Go",
   "views.dashboard.name": "订阅仪表盘",

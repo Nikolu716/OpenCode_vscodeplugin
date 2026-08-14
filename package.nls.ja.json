@@ -1,5 +1,5 @@
 {
-  "displayName": "OpenCode Go サブスクリプションマネージャー",
+  "displayName": "OpenCode GO Manager",
   "description": "VS CodeでOpenCode Goのサブスクリプションを確認・管理: 5時間/週/月の利用量、契約状態、利用可能なモデル、マルチアカウント対応、コンソールをワンクリックで開く。",
   "views.openCodeGo.title": "OpenCode Go",
   "views.dashboard.name": "サブスクリプションダッシュボード",

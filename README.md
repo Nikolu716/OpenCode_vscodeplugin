@@ -1,4 +1,4 @@
-# OpenCode Go Subscription Manager
+# OpenCode GO Manager
 
 View and manage OpenCode Go subscription usage from the VS Code sidebar.
 

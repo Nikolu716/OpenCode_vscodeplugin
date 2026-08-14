@@ -1,5 +1,5 @@
 {
-  "displayName": "OpenCode Go 구독 매니저",
+  "displayName": "OpenCode GO Manager",
   "description": "VS Code에서 OpenCode Go 구독을 바로 확인하고 관리하세요: 5시간/주간/월간 사용량, 구독 상태, 사용 가능한 모델, 다중 계정 지원, 콘솔 한 번에 열기.",
   "views.openCodeGo.title": "OpenCode Go",
   "views.dashboard.name": "구독 대시보드",

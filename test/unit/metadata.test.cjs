@@ -36,6 +36,7 @@ test("all package locale files use the same key set and placeholders", () => {
   const placeholders = (value) => [...String(value).matchAll(/\{([^}]+)\}/g)].map((match) => match[1]).sort()
 
   for (const [name, locale] of locales) {
+    assert.equal(locale.displayName, "OpenCode GO Manager", `${name} display name differs`)
     assert.deepEqual(Object.keys(locale).sort(), expectedKeys, `${name} key set differs`)
     for (const key of expectedKeys) {
       assert.deepEqual(placeholders(locale[key]), placeholders(locales[0][1][key]), `${name}:${key} placeholders differ`)
