@@ -21,6 +21,7 @@ test("security-sensitive settings have safe scopes", () => {
 })
 
 test("package contains no installed metadata or unused runtime dependencies", () => {
+  assert.equal(manifest.publisher, "NikoLu")
   assert.equal(manifest.__metadata, undefined)
   assert.deepEqual(manifest.dependencies, undefined)
   assert.deepEqual(manifest.extensionKind, ["workspace"])

@@ -1,6 +1,6 @@
 # Releasing
 
-The local development identity is `zcode-local.opencode-go-subscription`. It must never be published.
+The permanent Marketplace identity is `NikoLu.opencode-go-subscription`. Do not change either component after the first publication.
 
 ## One-time setup
 
